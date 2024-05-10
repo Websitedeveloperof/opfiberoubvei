@@ -316,7 +316,16 @@ function sendMessage() {
 appendMessage('user', message);
 userInput.value = '';
 
-
+const options = {
+    method: 'POST',
+    headers: {
+        // if you want use official api
+        /*
+        'content-type': 'application/json',
+        'X-RapidAPI-Key': 'Your Key',
+        'X-RapidAPI-Host': 'openai80.p.rapidapi.com'
+        */
+    },
     body: `{"messages":[{"role":"user","content":"${message}"}]}`
     // if you want use official api you need have this body
     // `{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"${message}"}]}`
